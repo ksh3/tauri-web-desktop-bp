@@ -6,14 +6,24 @@
       "type": "shell",
       "isBackground": true,
       "command": "pnpm",
-      "args": ["dev"]
+      "args": ["dev"],
+      "options": {
+        "env": {
+          "VITE_APP_ENV": "tauri"
+        }
+      },
     },
     {
       "label": "frontend:build",
       "type": "shell",
       // change this to your `beforeBuildCommand`:
       "command": "pnpm",
-      "args": ["build"]
+      "args": ["build"],
+            "options": {
+        "env": {
+          "VITE_APP_ENV": "tauri"
+        }
+      },
     }
   ]
 }

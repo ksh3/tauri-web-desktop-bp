@@ -1,20 +1,27 @@
 import { createSignal } from "solid-js";
 import logo from "./assets/logo.svg";
-import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
+import { GreetEvent } from "./types/_gen/GreetEvent";
+import { GreetState } from "./types/_gen/GreetState";
+import { Invoker } from "./invoker";
 
 function App() {
   const [greetMsg, setGreetMsg] = createSignal("");
   const [name, setName] = createSignal("");
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name: name() }));
-  }
+async function greet() {
+  const event: GreetEvent = { name: name() };
+  const state = await Invoker<GreetEvent, GreetState>(
+    "Greet",
+    event,
+  );
+  console.log(state);
+  setGreetMsg(state.message);
+}
 
   return (
     <main class="container">
-      <h1 class="text-5xl">Welcome to Tauri + Solid Vite</h1>
+      <h1>Welcome to Tauri + Solid</h1>
 
       <div class="row">
         <a href="https://vitejs.dev" target="_blank">

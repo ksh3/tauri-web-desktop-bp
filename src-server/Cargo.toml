@@ -1,0 +1,12 @@
+[package]
+name = "platform_server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+platform_core = { path = "../platform_core" }
+axum = "^0.8.1"
+tower-http = { version = "0.6.2", features = ["cors"] }
+tokio = { version = "1.44.1", features = ["full"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "^1.0.140"
