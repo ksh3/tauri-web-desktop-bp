@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "frontend:dev",
+      "type": "shell",
+      "isBackground": true,
+      "command": "pnpm",
+      "args": ["dev"]
+    },
+    {
+      "label": "frontend:build",
+      "type": "shell",
+      // change this to your `beforeBuildCommand`:
+      "command": "pnpm",
+      "args": ["build"]
+    }
+  ]
+}
