@@ -7,7 +7,7 @@
     {
       "type": "lldb",
       "request": "launch",
-      "name": "Debug",
+      "name": "Debug[tauri]",
       "cargo": {
         "args": [
           "build",
@@ -25,6 +25,6 @@
         "args": ["build", "--release", "--manifest-path=./src-tauri/Cargo.toml"]
       },
       "preLaunchTask": "frontend:build"
-    }
+    },
   ]
 }
