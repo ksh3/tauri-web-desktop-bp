@@ -6,7 +6,12 @@ edition = "2021"
 [dependencies]
 serde.workspace = true
 serde_json.workspace = true
+chrono.workspace = true
+reqwest.workspace = true
+async-trait.workspace = true
+zeroize.workspace = true
 platform_core = { path = "../platform_core" }
+firebase-auth = { version = "0.5.0", features = ["axum"] }
 axum = "^0.8.1"
 tower-http = { version = "^0.6.2", features = ["cors"] }
 tokio = { version = "1.44.1", features = ["full"] }

@@ -12,5 +12,15 @@ ts-rs = "^10.1.0"
 [dependencies]
 serde.workspace = true
 serde_json.workspace = true
+chrono.workspace = true
+reqwest.workspace = true
+async-trait.workspace = true
+zeroize.workspace = true
 ts-rs = "^10.1.0"
-chrono = "0.4.40"
+regex = "^1.11.0"
+hmac = "^0.12"
+sha2 = "^0.10"
+pbkdf2 = "^0.12"
+base62 = "^2.2.1"
+base64 = "^0.22.1"
+uuid = { version = "^1.2", features = ["v4"] }
